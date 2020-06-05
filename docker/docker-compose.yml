@@ -1,0 +1,87 @@
+version: '3.4'
+
+services:
+  flowable-db:
+    image: postgres:10
+    ports:
+      - 5432:5432
+    volumes:
+      - data_db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=flowable
+      - POSTGRES_USER=flowable
+      - POSTGRES_PASSWORD=flowable
+
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch-oss:7.5.0
+    ports:
+      - 9300:9300
+      - 9200:9200
+    volumes:
+      - data_es:/usr/share/elasticsearch/data
+    environment:
+      - discovery.type=single-node
+      - node.name=flowable-node
+      - cluster.name=flowable-cluster
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+
+  activemq:
+    image: rmohr/activemq
+    ports:
+      - 61616:61616
+      - 61613:61613
+      - 8161:8161
+
+  # This image requires to login to the Flowable Docker Repo (docker login repo.flowable.com)
+  # flowable-design:
+  #   image: repo.flowable.com/flowable/flowable-design:3.6.3
+  #   ports:
+  #     - 8091:8080
+  #   volumes:
+  #     - ~/.flowable/flowable.license:/root/.flowable/flowable.license:ro
+  #   environment:
+  #     - FLOWABLE_MODELER_APP_DEPLOYMENT-API-URL=http://host.docker.internal:8090/app-api # not yet working for linux systems, check https://github.com/docker/for-linux/issues/264 for PR state and workarounds
+  #     - FLOWABLE_MODELER_APP_DB-STORE-ENABLED=false
+  #     - SPRING_DATASOURCE_DRIVER-CLASS-NAME=org.postgresql.Driver
+  #     - SPRING_DATASOURCE_URL=jdbc:postgresql://flowable-db:5432/flowable
+  #     - SPRING_DATASOURCE_USERNAME=flowable
+  #     - SPRING_DATASOURCE_PASSWORD=flowable
+  #     - FLOWABLE_COMMON_APP_IDM-ADMIN_USER=admin
+  #     - FLOWABLE_COMMON_APP_IDM-ADMIN_PASSWORD=test
+  #     - FLOWABLE_COMMON_APP_IDM-URL=http://host.docker.internal:8090
+  #     - LOGGING_LEVEL_ROOT=info
+  #     - LOGGING_FILE=target/app.log
+  #   entrypoint:
+  #     - catalina.sh
+  #     - run
+
+  # This image requires to login to the Flowable Docker Repo (docker login repo.flowable.com)
+  # flowable-control:
+  #   image: repo.flowable.com/flowable/flowable-control:3.6.3
+  #   ports:
+  #     - 8092:8080
+  #   volumes:
+  #     - ~/.flowable/flowable.license:/root/.flowable/flowable.license:ro
+  #   environment:
+  #     - FLOWABLE_CONTROL_APP_CLUSTER-CONFIG_SERVER-ADDRESS=http://host.docker.internal # not yet working for linux systems, check https://github.com/docker/for-linux/issues/264 for PR state and workarounds
+  #     - FLOWABLE_CONTROL_APP_CLUSTER-CONFIG_CONTEXT-ROOT=/
+  #     - FLOWABLE_CONTROL_APP_CLUSTER-CONFIG_PASSWORD=test
+  #     - SPRING_DATASOURCE_DRIVER-CLASS-NAME=org.postgresql.Driver
+  #     - SPRING_DATASOURCE_URL=jdbc:postgresql://flowable-db:5432/flowable
+  #     - SPRING_DATASOURCE_USERNAME=flowable
+  #     - SPRING_DATASOURCE_PASSWORD=flowable
+  #     - FLOWABLE_COMMON_APP_IDM-ADMIN_USER=admin
+  #     - FLOWABLE_COMMON_APP_IDM-ADMIN_PASSWORD=test
+  #     - LOGGING_LEVEL_ROOT=info
+  #     - LOGGING_FILE=target/app.log
+  #   entrypoint:
+  #     - catalina.sh
+  #     - run
+
+volumes:
+  data_db:
+  data_es:

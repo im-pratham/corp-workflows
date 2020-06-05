@@ -1,0 +1,111 @@
+{
+  "name": "corp workflows",
+  "groups": [
+    {
+      "key": "flowableAdministrator",
+      "name": "Flowable Administrator"
+    },
+    {
+      "key": "flowableUser",
+      "name": "Flowable Flowable User"
+    },
+    {
+      "key": "workflowsAdministrator",
+      "name": "corp workflows Administrator"
+    },
+    {
+      "key": "workflowsUser",
+      "name": "corp workflows User"
+    },
+    {
+      "key": "workAdministrator",
+      "name": "corp workflows Work Administrator"
+    },
+    {
+      "key": "workUser",
+      "name": "corp workflows Work User"
+    },
+    {
+      "key": "engageAdministrator",
+      "name": "corp workflows Engage Administrator"
+    },
+    {
+      "key": "engageUser",
+      "name": "corp workflows Engage User"
+    },
+    {
+      "key": "engageChatbot",
+      "name": "corp workflows Engage Chatbot"
+    }
+  ],
+  "users": [
+    {
+      "firstName": "Flowable",
+      "lastName": "Admin",
+      "login": "admin",
+      "email": "admin@workflows.corp.com",
+      "language": "en",
+      "theme": "flowable",
+      "userDefinitionKey": "admin-flowable"
+    },
+    {
+      "firstName": "workflows",
+      "lastName": "Admin",
+      "login": "workflows.admin",
+      "email": "workflows.admin@workflows.corp.com",
+      "language": "en",
+      "theme": "flowable",
+      "userDefinitionKey": "admin-workflows"
+    },
+    {
+      "firstName": "Work",
+      "lastName": "Admin",
+      "login": "work.admin",
+      "email": "work.admin@workflows.corp.com",
+      "language": "en",
+      "theme": "flowable",
+      "userDefinitionKey": "admin-work"
+    },
+    {
+      "firstName": "Work",
+      "lastName": "User",
+      "login": "work.user",
+      "email": "work.user@workflows.corp.com",
+      "language": "en",
+      "theme": "flowable",
+      "userDefinitionKey": "user-work"
+    },
+    {
+      "firstName": "Engage",
+      "lastName": "Admin",
+      "login": "engage.admin",
+      "email": "engage.admin@workflows.corp.com",
+      "language": "en",
+      "theme": "flowable",
+      "userDefinitionKey": "admin-engage"
+    },
+    {
+      "firstName": "Engage",
+      "lastName": "User",
+      "login": "engage.user",
+      "email": "engage.user@workflows.corp.com",
+      "language": "en",
+      "theme": "flowable",
+      "userDefinitionKey": "user-engage"
+    },
+    {
+      "firstName": "Chat",
+      "lastName": "Bot",
+      "login": "chat.bot",
+      "email": "bot@workflows.corp.com",
+      "description": "AI Chat Bot",
+      "language": "en",
+      "type": "bot",
+      "theme": "flowable",
+      "memberGroups": [
+        "engageChatbot"
+      ],
+      "userDefinitionKey": "user-bot"
+    }
+  ]
+}

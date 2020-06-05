@@ -1,0 +1,423 @@
+[
+  {
+    "key": "admin-flowable",
+    "name": "Flowable Administration User",
+    "description": "Creates Flowable administration user.",
+    "initialUserSubType": "admin",
+    "initialState": "ACTIVE",
+    "initialSubState": "ACTIVE",
+    "forms": {
+      "init": "F01_userInitFormDefault",
+      "view": "F02_userViewFormDefault",
+      "edit": "F03_userEditFormDefault"
+    },
+    "memberGroups": [
+      "flowableUser",
+      "flowableAdministrator",
+      "workflowsUser",
+      "workflowsAdministrator",
+      "engageUser",
+      "engageAdministrator",
+      "workUser",
+      "workAdministrator"
+    ],
+    "lookupGroups":[
+      "workflowsUser"
+    ],
+    "actionPermissions": {
+      "create": [ "flowableAdministrator"],
+      "edit": [ "flowableAdministrator" ],
+      "deactivate": [ "flowableAdministrator" ],
+      "activate": [ "flowableAdministrator" ]
+    },
+    "initialVariables": {
+      "adminUser": true,
+      "description": "Admin"
+    },
+    "conversationFilters": [ "all" ],
+    "contactFilters": [ "all", "active", "inactive" ],
+    "allowedFeatures": [
+      "contacts",
+      "editContactAvatar",
+      "changeOwnPassword",
+      "createUser",
+      "changeContactPassword",
+      "user-mgmt",
+      "work",
+      "createWork",
+      "reports",
+      "reportsMetrics",
+      "tasks",
+      "templateManagement",
+      "editContactAvatar",
+      "registerDevice",
+      "documents",
+      "lastReadAvatars",
+      "compliance",
+      "search-api",
+      "workobject-api",
+
+      "conversations",
+      "createConversation",
+      "editMessage",
+      "clearMessage",
+      "deleteMessage",
+      "replyToMessage",
+      "forwardMessage",
+      "reactToMessage",
+      "sendMessageFromProfile",
+      "emojiPicker",
+      "markdownInput",
+      "slashActions",
+      "videoMessage",
+      "audioMessage",
+      "fileUpload",
+      "editConversationAvatar",
+      "editOwnAvatar",
+      "websockets",
+      "snooze",
+      "bubbles",
+
+      "actuators"
+    ]
+  },
+
+  {
+    "key": "admin-workflows",
+    "name": "corp workflows Administration User",
+    "description": "Creates a new workflows Administration user.",
+    "initialUserSubType": "admin",
+    "initialState": "ACTIVE",
+    "initialSubState": "ACTIVE",
+    "forms": {
+      "init": "F01_userInitFormDefault",
+      "view": "F02_userViewFormDefault",
+      "edit": "F03_userEditFormDefault"
+    },
+    "memberGroups": [
+      "flowableUser",
+      "flowableAdministrator",
+      "workflowsUser",
+      "workflowsAdministrator",
+      "engageUser",
+      "engageAdministrator",
+      "workUser",
+      "workAdministrator"
+    ],
+    "lookupGroups":[
+      "engageUser",
+      "engageAdministrator"
+    ],
+    "actionPermissions": {
+      "create": [ "workflowsAdministrator"],
+      "edit": [ "workflowsAdministrator" ],
+      "deactivate": [ "workflowsAdministrator" ],
+      "activate": [ "workflowsAdministrator" ]
+    },
+    "initialVariables": {
+      "adminUser": true,
+      "description": "workflows Admin"
+    },
+    "conversationFilters": [ "all" ],
+    "contactFilters": [ "all", "active", "inactive" ],
+    "allowedFeatures": [
+      "contacts",
+      "editContactAvatar",
+      "changeOwnPassword",
+      "createUser",
+      "changeContactPassword",
+      "user-mgmt",
+      "work",
+      "createWork",
+      "reports",
+      "reportsMetrics",
+      "tasks",
+      "templateManagement",
+      "editContactAvatar",
+      "registerDevice",
+      "documents",
+      "lastReadAvatars",
+      "compliance",
+      "search-api",
+      "workobject-api",
+
+      "conversations",
+      "createConversation",
+      "editMessage",
+      "clearMessage",
+      "deleteMessage",
+      "replyToMessage",
+      "forwardMessage",
+      "reactToMessage",
+      "sendMessageFromProfile",
+      "emojiPicker",
+      "markdownInput",
+      "slashActions",
+      "videoMessage",
+      "audioMessage",
+      "fileUpload",
+      "editConversationAvatar",
+      "editOwnAvatar",
+      "websockets",
+      "snooze",
+      "bubbles",
+
+      "actuators"
+    ]
+  },
+
+  {
+    "key": "user-work",
+    "name": "Default, Work non-specific User",
+    "description": "Creates a new, non-specific user where the member groups can be freely chosen.",
+    "initialState": "ACTIVE",
+    "initialSubState": "ACTIVE",
+    "forms": {
+      "init": "F01_userInitFormDefault",
+      "view": "F02_userViewFormDefault",
+      "edit": "F03_userEditFormDefault"
+    },
+    "memberGroups": [
+      "flowableUser",
+      "workflowsUser",
+      "workUser"
+    ],
+    "lookupGroups":[
+      "workUser"
+    ],
+    "actionPermissions": {
+      "create": [ "workflowsAdministrator" ],
+      "edit": [ "workflowsAdministrator" ],
+      "deactivate": [ "workflowsAdministrator" ],
+      "activate": [ "workflowsAdministrator" ]
+    },
+    "contactFilters": [ "active" ],
+    "allowedFeatures": [
+      "contacts",
+      "editContactAvatar",
+      "changeOwnPassword",
+      "work",
+      "createWork",
+      "cases",
+      "tasks"
+    ]
+  },
+
+  {
+    "key": "admin-work",
+    "name": "corp workflows Work Administration User",
+    "description": "Creates a new, administration user.",
+    "initialUserSubType": "admin",
+    "initialState": "ACTIVE",
+    "initialSubState": "ACTIVE",
+    "forms": {
+      "init": "F01_userInitFormDefault",
+      "view": "F02_userViewFormDefault",
+      "edit": "F03_userEditFormDefault"
+    },
+    "memberGroups": [
+      "flowableUser",
+      "flowableAdministrator",
+      "workflowsUser",
+      "workflowsAdministrator",
+      "workUser",
+      "workAdministrator"
+    ],
+    "lookupGroups":[
+      "workUser"
+    ],
+    "actionPermissions": {
+      "create": [ "workflowsAdministrator"],
+      "edit": [ "workflowsAdministrator" ],
+      "deactivate": [ "workflowsAdministrator" ],
+      "activate": [ "workflowsAdministrator" ]
+    },
+    "initialVariables": {
+      "adminUser": true,
+      "description": "Work Admin"
+    },
+    "conversationFilters": [ "all" ],
+    "contactFilters": [ "all", "active", "inactive" ],
+    "allowedFeatures": [
+      "contacts",
+      "editContactAvatar",
+      "changeOwnPassword",
+      "createUser",
+      "changeContactPassword",
+      "user-mgmt",
+      "work",
+      "createWork",
+      "reports",
+      "reportsMetrics",
+      "tasks",
+      "templateManagement",
+      "editContactAvatar",
+      "registerDevice",
+      "documents",
+      "lastReadAvatars",
+      "compliance",
+      "search-api",
+      "workobject-api",
+
+      "actuators"
+    ]
+  },
+
+  {
+    "key": "user-engage",
+    "name": "Default, Engage non-specific User",
+    "description": "Creates a new, non-specific user where the member groups can be freely chosen.",
+    "initialState": "ACTIVE",
+    "initialSubState": "ACTIVE",
+    "forms": {
+      "init": "F01_userInitFormDefault",
+      "view": "F02_userViewFormDefault",
+      "edit": "F03_userEditFormDefault"
+    },
+    "memberGroups": [
+      "flowableUser",
+      "workflowsUser",
+      "engageUser"
+    ],
+    "lookupGroups":[
+      "engageUser"
+    ],
+    "actionPermissions": {
+      "create": [ "workflowsAdministrator" ],
+      "edit": [ "workflowsAdministrator" ],
+      "deactivate": [ "workflowsAdministrator" ],
+      "activate": [ "workflowsAdministrator" ]
+    },
+    "contactFilters": [ "active" ],
+    "allowedFeatures": [
+      "contacts",
+      "editContactAvatar",
+      "changeOwnPassword",
+
+      "conversations",
+      "editOwnAvatar",
+      "websockets"
+    ]
+  },
+
+  {
+    "key": "admin-engage",
+    "name": "corp workflows Engage Administration User",
+    "description": "Creates a new, administration user.",
+    "initialUserSubType": "admin",
+    "initialState": "ACTIVE",
+    "initialSubState": "ACTIVE",
+    "forms": {
+      "init": "F01_userInitFormDefault",
+      "view": "F02_userViewFormDefault",
+      "edit": "F03_userEditFormDefault"
+    },
+    "memberGroups": [
+      "flowableUser",
+      "flowableAdministrator",
+      "workflowsUser",
+      "workflowsAdministrator",
+      "engageUser",
+      "engageAdministrator"
+    ],
+    "lookupGroups":[
+      "engageUser",
+      "engageAdministrator"
+    ],
+    "actionPermissions": {
+      "create": [ "workflowsAdministrator"],
+      "edit": [ "workflowsAdministrator" ],
+      "deactivate": [ "workflowsAdministrator" ],
+      "activate": [ "workflowsAdministrator" ]
+    },
+    "initialVariables": {
+      "adminUser": true,
+      "description": "Engage Admin"
+    },
+    "conversationFilters": [ "all" ],
+    "contactFilters": [ "all", "active", "inactive" ],
+    "allowedFeatures": [
+      "contacts",
+      "editContactAvatar",
+      "changeOwnPassword",
+      "createUser",
+      "changeContactPassword",
+      "user-mgmt",
+      "work",
+      "createWork",
+      "reports",
+      "reportsMetrics",
+      "tasks",
+      "templateManagement",
+      "editContactAvatar",
+      "registerDevice",
+      "documents",
+      "lastReadAvatars",
+      "compliance",
+      "search-api",
+      "workobject-api",
+
+      "conversations",
+      "createConversation",
+      "editMessage",
+      "clearMessage",
+      "deleteMessage",
+      "replyToMessage",
+      "forwardMessage",
+      "reactToMessage",
+      "sendMessageFromProfile",
+      "emojiPicker",
+      "markdownInput",
+      "slashActions",
+      "videoMessage",
+      "audioMessage",
+      "fileUpload",
+      "editConversationAvatar",
+      "editOwnAvatar",
+      "websockets",
+      "snooze",
+      "bubbles",
+
+      "actuators"
+    ]
+  },
+
+  {
+    "key": "user-bot",
+    "name": "A bot user",
+    "description": "Creates a new user for a bot.",
+    "initialUserType": "bot",
+    "initialState": "ACTIVE",
+    "initialSubState": "ACTIVE",
+    "forms": {
+      "init": "F01_userInitFormDefault",
+      "view": "F02_userViewFormDefault",
+      "edit": "F03_userEditFormDefault"
+    },
+    "memberGroups": [
+      "flowableUser",
+      "workflowsUser",
+      "engageUser",
+      "engageChatbot"
+    ],
+    "lookupGroups":[
+      "engageUser"
+    ],
+    "actionPermissions": {
+      "create": [ "workflowsAdministrator" ],
+      "edit": [ "workflowsAdministrator" ],
+      "deactivate": [ "workflowsAdministrator" ],
+      "activate": [ "workflowsAdministrator" ]
+    },
+    "contactFilters": [ "all" ],
+    "allowedFeatures": [
+      "contacts",
+      "editContactAvatar",
+      "changeOwnPassword",
+
+      "conversations",
+      "editOwnAvatar",
+      "websockets"
+    ]
+  }
+]
