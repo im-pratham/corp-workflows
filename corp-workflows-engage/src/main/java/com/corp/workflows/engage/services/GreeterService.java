@@ -15,6 +15,10 @@ public class GreeterService {
     public void greet(String greeter, String personToBeGreeted, DelegateExecution execution) {
         //You can access the execution context as you would do with with a JavaDelegate
         execution.setVariable("newVar", "newVarValue");
+        greet(greeter, personToBeGreeted);
+    }
+
+    public void greet(String greeter, String personToBeGreeted) {
         logger.info(greeter + " says hello to " + personToBeGreeted);
     }
     
