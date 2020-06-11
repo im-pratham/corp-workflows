@@ -56,13 +56,18 @@ public class CorpWorkflowsController {
     }
 
     @GetMapping("/runtime-tasks")
-    public List<Map<String,String>> getRuntimeTasks() {
-        return taskService.createTaskQuery().list().stream().map(t -> ImmutableMap.of("id",t.getId(),"name",t.getName(),"scopeType", ObjectUtils.firstNonNull(t.getScopeType(),"bpmn"))).collect(Collectors.toList());
+    public List<Map<String, String>> getRuntimeTasks() {
+        return taskService.createTaskQuery().list().stream().map(t -> ImmutableMap.of("id", t.getId(), "name",
+                t.getName(), "scopeType", ObjectUtils.firstNonNull(t.getScopeType(), "bpmn")))
+                .collect(Collectors.toList());
     }
 
     @GetMapping("history-tasks")
-    public List<Map<String,String>> getHistoryTasks() {
-        return historyService.createHistoricTaskInstanceQuery().list().stream().map(t -> ImmutableMap.of("id",t.getId(),"name",t.getName(),"scopeType",ObjectUtils.firstNonNull(t.getScopeType(),"bpmn"))).collect(Collectors.toList());
+    public List<Map<String, String>> getHistoryTasks() {
+        return historyService
+                .createHistoricTaskInstanceQuery().list().stream().map(t -> ImmutableMap.of("id", t.getId(), "name",
+                        t.getName(), "scopeType", ObjectUtils.firstNonNull(t.getScopeType(), "bpmn")))
+                .collect(Collectors.toList());
     }
 
 }
