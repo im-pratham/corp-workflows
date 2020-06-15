@@ -3,7 +3,6 @@ package com.corp.workflows.engage.configuration;
 import com.flowable.spring.boot.EngineConfigurationConfigurer;
 import com.google.common.collect.ImmutableList;
 
-import org.flowable.cmmn.spring.SpringCmmnEngineConfiguration;
 import org.flowable.common.engine.api.delegate.event.FlowableEvent;
 import org.flowable.common.engine.api.delegate.event.FlowableEventListener;
 import org.flowable.spring.SpringProcessEngineConfiguration;
