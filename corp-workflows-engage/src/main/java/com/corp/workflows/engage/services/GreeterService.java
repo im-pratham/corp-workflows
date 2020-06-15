@@ -29,7 +29,7 @@ public class GreeterService implements JavaDelegate{
     @Override
     public void execute(DelegateExecution execution) {
         String greeter = execution.getVariable("greeter", String.class);
-        String personToBeGreeted = execution.getVariable("personToBeGreeted", String.class);
+        String personToBeGreeted = execution.getVariable("greeter", String.class);
         if ("Jose Luis".equals(greeter)) {
             throw new FlowableIllegalArgumentException("Jose Luis is not allowed to greet.");
         }
