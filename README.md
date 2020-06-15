@@ -53,6 +53,9 @@ After all the applications have been started, these are the links for the differ
 - <http://localhost:8888/flowable-design> - Flowable Design (user: admin, pass: test)
 - <http://localhost:9988/flowable-control> - Flowable Control (user: admin, pass: test)
 - <http://localhost:8161/admin/> - Active MQ management (user: admin, pass: admin)
+- <http://localhost:9100/> - Elasticsearch head - Administration interface
+- <http://localhost:3030/> - Mirage - Elasticsearch query interface
+- <http://localhost:8025> - Mailhog - Fake SMTP server
 
 ## Setting up the needed Infrastructure with Docker
 

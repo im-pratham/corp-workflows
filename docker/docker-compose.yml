@@ -24,6 +24,10 @@ services:
       - discovery.type=single-node
       - node.name=flowable-node
       - cluster.name=flowable-cluster
+      - http.cors.allow-origin=http://localhost:9100,http://127.0.0.1:9100,http://localhost:3030,http://127.0.0.1:3030
+      - http.cors.enabled=true
+      - http.cors.allow-headers=X-Requested-With,X-Auth-Token,Content-Type,Content-Length,Authorization
+      - http.cors.allow-credentials=true
     ulimits:
       memlock:
         soft: -1
@@ -35,6 +39,26 @@ services:
       - 61616:61616
       - 61613:61613
       - 8161:8161
+
+  eshead:
+    image: ainize/elasticsearch-head:latest
+    ports:
+      - 9100:9100
+    links:
+      - elasticsearch
+
+  mirage:
+    image: appbaseio/mirage
+    ports:
+      - 3030:3030
+    links:
+      - elasticsearch
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - 1025:1025
+      - 8025:8025
 
   # This image requires to login to the Flowable Docker Repo (docker login repo.flowable.com)
   # flowable-design:
